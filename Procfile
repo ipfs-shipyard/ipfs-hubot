@@ -1,1 +1,2 @@
-web: bin/hubot -a irc --name ipfsbot
+# irc: bin/hubot -a irc --name ipfsbot
+github: bin/hubot -a github-adapter --name ipfsbot

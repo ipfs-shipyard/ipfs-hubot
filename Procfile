@@ -1,2 +1,2 @@
-# irc: bin/hubot -a irc --name ipfsbot
-github: bin/hubot -a github-adapter --name ipfsbot
+slack: bin/hubot -a slack --name ipfsbot
+# ipfs: ipfs daemon

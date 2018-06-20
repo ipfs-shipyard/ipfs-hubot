@@ -113,7 +113,7 @@ To use a package, check the package's documentation, but in general it is:
 
 You can review `external-scripts.json` to see what is included by default.
 
-#### Advanced Usage
+##### Advanced Usage
 
 It is also possible to define `external-scripts.json` as an object to
 explicitly specify which scripts from a package should be included. The example
@@ -208,7 +208,7 @@ hubot onto Windows][deploy-windows] wiki pages.
 [heroku-node-docs]: http://devcenter.heroku.com/articles/node-js
 [deploy-heroku]: https://github.com/github/hubot/blob/master/docs/deploying/heroku.md
 [deploy-unix]: https://github.com/github/hubot/blob/master/docs/deploying/unix.md
-[deploy-windows]: https://github.com/github/hubot/blob/master/docs/deploying/unix.md
+[deploy-windows]: https://github.com/github/hubot/blob/master/docs/deploying/windows.md
 
 ## Campfire Variables
 

@@ -22,6 +22,6 @@
     "underscore": "^1.9.1"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "8.9.4"
   }
 }

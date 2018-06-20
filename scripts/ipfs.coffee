@@ -121,6 +121,11 @@ localApiUrl = '/ip4/127.0.0.1/tcp/5001'
 localGatewayUrl = 'http://localhost:8080'
 globalGatewayUrl = 'https://gateway.ipfs.io'
 
+# grab values from env vars
+localApiUrl = process.env.IPFS_LOCAL_API if process.env.IPFS_LOCAL_API
+localGatewayUrl = process.env.IPFS_GLOBAL_GATEWAY if process.env.IPFS_GLOBAL_GATEWAY
+globalGatewayUrl = process.env.IPFS_LOCAL_GATEWAY if process.env.IPFS_LOCAL_GATEWAY
+
 ipfs = ipfsApi localApiUrl
 
 # test it just to show if it's not online on startup.
@@ -327,11 +332,14 @@ module.exports = (robot) ->
     path = cleanPath(res.match[1])
     # todo: some path validation
     testApi res, ->
-      res.send "pinning #{prettyPath path}"
+      res.send "pinning #{prettyPath path} (warning: experimental)"
       # todo: implement -r=false support (right now it assumes -r=true)
       ipfs.refs path, {r: true}, mustSucceed res, (r) ->
         ipfs.pin.add path, {r: true}, mustSucceed res, (r) ->
-          res.send "success: pinned recursively: #{prettyPath path}"
+          res.send """
+            success: pinned recursively: #{prettyPath path}
+            (warning: this pinbot is experimental. do not rely on me yet.)
+            """
 
   robot.respond /ipfs pin ls (\S+)/i, runCmdPath ipfs.pin.ls,
     output: (o) -> o.map((e) -> "#{e.hash} #{e.type}").join('\n')

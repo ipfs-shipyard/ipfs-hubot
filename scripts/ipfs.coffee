@@ -236,7 +236,7 @@ getParams = (params, res) ->
     return [] # no params
 
 testApi = (res, cb) ->
-  console.log("running command: " + res.message.rawText)
+  console.log("running command: <#{res.message.user.name}> #{res.message.rawText}")
   ipfs.version (err) ->
     if (err)
       return reportFail res, 'api not working. ' + err
@@ -286,7 +286,6 @@ module.exports = (robot) ->
       if path2.substr(0, 6) != '/ipfs/'
         return reportFail res, 'failed to resolve path. got: ' + path2
       cid = path2.substr(6)
-      console.log('resolve', path, path2, cid)
       cb(cid)
 
   # NODE INFO
@@ -344,6 +343,7 @@ module.exports = (robot) ->
       res.send "pinning #{prettyPath path} (warning: experimental)"
       # todo: implement -r=false support (right now it assumes -r=true)
       resolveToCid res, path, (cid) ->
+        res.send "resolved to cid: `#{cid}`"
         ipfs.refs cid, {r: true}, mustSucceed res, (r) ->
           ipfs.pin.add cid, {r: true}, mustSucceed res, (r) ->
             res.send """

@@ -329,7 +329,7 @@ module.exports = (robot) ->
 
   # ipfs pin
   robot.respond /(ipfs pin add -r|pin) (\S+)/i, (res) ->
-    path = cleanPath(res.match[1])
+    path = cleanPath(res.match[2])
     # todo: some path validation
     testApi res, ->
       res.send "pinning #{prettyPath path} (warning: experimental)"

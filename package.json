@@ -18,7 +18,7 @@
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.1",
     "hubot-slack": "^4.5.1",
-    "ipfs-api": "^22.1.0",
+    "ipfs-api": "github:ipfs/js-ipfs-api#f77bbf59392bd4ea5ed04db46882ed265fcdd231",
     "underscore": "^1.9.1"
   },
   "engines": {

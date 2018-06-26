@@ -18,5 +18,10 @@ RUN npm uninstall --save hubot-heroku-keepalive
 RUN sed -i '/heroku/d' /hubot/external-scripts.json
 ADD scripts/ipfs.coffee /hubot/scripts/ipfs.coffee
 
+# These variables control the behaviour. Overwrite with --env
+ENV IPFS_LOCAL_API /ip4/127.0.0.1/tcp/5001
+ENV IPFS_LOCAL_GATEWAY http://127.0.0.1:8080
+ENV HUBOT_SLACK_TOKEN set-your-own
+
 # And go
 ENTRYPOINT ["/bin/sh", "-c", "bin/hubot --adapter slack"]

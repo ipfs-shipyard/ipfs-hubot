@@ -11,7 +11,7 @@ WORKDIR /hubot
 
 # Install hubot
 RUN yo hubot --name="ipfsbot" --description="IPFS Pinbot" --defaults --adapter=slack
-RUN npm install --save ipfs-api
+RUN npm install --save ipfs-api@github:ipfs/js-ipfs-api#f77bbf59392bd4ea5ed04db46882ed265fcdd231
 RUN npm install --save coffeescript@^1.12.6
 RUN npm install --save underscore
 RUN npm uninstall --save hubot-heroku-keepalive

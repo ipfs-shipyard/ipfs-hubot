@@ -15,6 +15,7 @@
     "hubot-maps": "0.0.3",
     "hubot-pugme": "^0.1.1",
     "hubot-redis-brain": "0.0.4",
+    "hubot-reload": "0.0.2",
     "hubot-rules": "^0.1.2",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.1",

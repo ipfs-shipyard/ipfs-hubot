@@ -123,8 +123,8 @@ globalGatewayUrl = 'https://gateway.ipfs.io'
 
 # grab values from env vars
 localApiUrl = process.env.IPFS_LOCAL_API if process.env.IPFS_LOCAL_API
-localGatewayUrl = process.env.IPFS_GLOBAL_GATEWAY if process.env.IPFS_GLOBAL_GATEWAY
-globalGatewayUrl = process.env.IPFS_LOCAL_GATEWAY if process.env.IPFS_LOCAL_GATEWAY
+localGatewayUrl = process.env.IPFS_LOCAL_GATEWAY if process.env.IPFS_LOCAL_GATEWAY
+globalGatewayUrl = process.env.IPFS_GLOBAL_GATEWAY if process.env.IPFS_GLOBAL_GATEWAY
 
 ipfs = ipfsApi localApiUrl
 

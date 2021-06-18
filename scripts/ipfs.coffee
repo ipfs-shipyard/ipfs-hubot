@@ -340,7 +340,7 @@ module.exports = (robot) ->
     path = cleanPath(res.match[2])
     # todo: some path validation
     testApi res, ->
-      res.send "pinning #{prettyPath path} (warning: experimental)"
+      res.send "pinning #{prettyPath path}"
       # todo: implement -r=false support (right now it assumes -r=true)
       resolveToCid res, path, (cid) ->
         res.send "resolved to cid: `#{cid}`"
@@ -348,7 +348,6 @@ module.exports = (robot) ->
           ipfs.pin.add cid, {r: true}, mustSucceed res, (r) ->
             res.send """
               success: pinned recursively: #{prettyPath path}
-              (warning: this pinbot is experimental. do not rely on me yet.)
               """
 
   robot.respond /ipfs pin ls (\S+)/i, runCmdPath ipfs.pin.ls,

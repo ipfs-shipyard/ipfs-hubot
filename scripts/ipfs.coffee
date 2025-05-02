@@ -119,7 +119,7 @@ _ = require 'underscore'
 
 localApiUrl = '/ip4/127.0.0.1/tcp/5001'
 localGatewayUrl = 'http://localhost:8080'
-globalGatewayUrl = 'https://gateway.ipfs.io'
+globalGatewayUrl = 'https://ipfs.io'
 
 # grab values from env vars
 localApiUrl = process.env.IPFS_LOCAL_API if process.env.IPFS_LOCAL_API
